@@ -19,15 +19,19 @@ def test_first_node_is_head():      # !!!!
     new_list.insert("First Node")
     actual = new_list.head.value
     expected = "First Node"
+    assert actual == expected
 
-# def test_insert_multiple_nodes():
-#     new_list = LinkedList()
-#     new_list.insert(1)
-#     new_list.insert(2)
-#     nodes_num = 2
-#     actual = LinkedList.counter
-#     expected = nodes_num
-#     assert actual == expected
+def test_insert_multiple_nodes():
+    new_list = LinkedList()
+    new_list.insert(1)
+    new_list.insert(2)
+    actual1 = new_list.includes(1)
+    actual2 = new_list.includes(2)
+    expected = True
+    # nodes_num = 2
+    # actual = LinkedList.counter
+    # expected = nodes_num
+    assert actual1, actual2 == expected
 
 def test_value_exists():
     new_list = LinkedList()
