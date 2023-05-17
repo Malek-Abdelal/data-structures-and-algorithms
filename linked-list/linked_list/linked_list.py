@@ -1,4 +1,6 @@
 import re
+import math
+
 class Node :
     def __init__(self, value, next = None):
         self.value = value
@@ -28,6 +30,7 @@ class LinkedList:
     def to_string(self):
         current = self.head
         values = ""
+        list_values = ""
         while current:
             values += f"{ {current.value} } -> "
             list_values = re.sub(r"\'", ' ', values)
@@ -85,16 +88,59 @@ class LinkedList:
                     break
                 current = current.next
 
+    
+    def kth_from_end(self, k):
+        current = self.head
+        length = 0
+        k_reverse = 0
+        while current :
+            length += 1
+            current = current.next
+
+        current = self.head
+        while current :
+            length -= 1
+            k_reverse -= 1
+            if (k == length or k == k_reverse):
+                return current.value
+            current = current.next
+        current = self.head
+        if self.head:
+            return ("Your input exceed the length of the array, please inter a valid number !")
+        return ("Your linked list is empty !")
+    
+
+    def node_at_the_middle(self):
+        current = self.head
+        length = 0
+        middle = 0
+        while current :
+            length += 1
+            current = current.next
+
+        current = self.head
+        length /= 2
+        while current :
+            middle += 1
+            if (middle == math.ceil(length)):
+                return current.value
+            current = current.next
+        return ("Your linked list is empty !")
+
+
+
 
 
 if __name__ == "__main__":
     f_node = Node(1)
     f_linked_list = LinkedList()
-    f_linked_list.insert(2)
-    f_linked_list.insert(1)
-    f_linked_list.append(5)
-    f_linked_list.insert_before(2, 7)
-    f_linked_list.insert_after(1, 8)
-    f_linked_list.delete(7)
+    # f_linked_list.insert(2)
+    # f_linked_list.insert(1)
+    # f_linked_list.append(5)
+    # f_linked_list.insert_before(2, 7)
+    # f_linked_list.insert_after(1, 8)
+    # f_linked_list.delete(7)
     print(f_linked_list.to_string())
+    # print(f_linked_list.kth_from_end(1))
+    print(f_linked_list.node_at_the_middle())
 
