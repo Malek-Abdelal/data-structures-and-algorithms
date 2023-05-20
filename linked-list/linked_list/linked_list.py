@@ -92,23 +92,25 @@ class LinkedList:
     def kth_from_end(self, k):
         current = self.head
         length = 0
-        k_reverse = 0
         while current :
             length += 1
             current = current.next
 
         current = self.head
-        while current :
-            length -= 1
-            k_reverse -= 1
-            if (k == length or k == k_reverse):
-                return current.value
-            current = current.next
-        current = self.head
-        if self.head:
-            return ("Your input exceed the length of the array, please inter a valid number !")
-        return ("Your linked list is empty !")
-    
+        try:
+            if k < 0 :
+                raise ValueError("Negative values are not allowed")
+            while current :
+                length -= 1
+                if (k == length):
+                    return current.value
+                current = current.next
+            current = self.head
+            if self.head:
+                return ("Your input exceed the length of the array, please inter a valid number !")
+            return ("Your linked list is empty !")
+        except ValueError:
+            return('Negative values are not allowed !')
 
     def node_at_the_middle(self):
         current = self.head
@@ -141,6 +143,6 @@ if __name__ == "__main__":
     # f_linked_list.insert_after(1, 8)
     # f_linked_list.delete(7)
     print(f_linked_list.to_string())
-    # print(f_linked_list.kth_from_end(1))
-    print(f_linked_list.node_at_the_middle())
+    print(f_linked_list.kth_from_end(0))
+    # print(f_linked_list.node_at_the_middle())
 

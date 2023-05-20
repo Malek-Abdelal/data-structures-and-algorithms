@@ -82,7 +82,7 @@ def test_kthFromEnd_length_and_k_are_same(linked_list_instance_with_3_nodes_123)
     assert linked_list_instance_with_3_nodes_123.kth_from_end(3) == "Your input exceed the length of the array, please inter a valid number !"
 
 def test_kthFromEnd_negative_k(linked_list_instance_with_3_nodes_123):
-    assert linked_list_instance_with_3_nodes_123.kth_from_end(-2) == 2
+    assert linked_list_instance_with_3_nodes_123.kth_from_end(-2) == "Negative values are not allowed !"
 
 def test_kthFromEnd_size_1_list():
     new_list = LinkedList()
