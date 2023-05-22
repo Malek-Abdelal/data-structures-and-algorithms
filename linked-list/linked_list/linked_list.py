@@ -97,6 +97,7 @@ class LinkedList:
             current = current.next
 
         current = self.head
+        
         try:
             if k < 0 :
                 raise ValueError("Negative values are not allowed")
