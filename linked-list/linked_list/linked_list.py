@@ -97,6 +97,7 @@ class LinkedList:
             current = current.next
 
         current = self.head
+
         try:
             if k < 0 :
                 raise ValueError("Negative values are not allowed")
@@ -128,6 +129,39 @@ class LinkedList:
                 return current.value
             current = current.next
         return ("Your linked list is empty !")
+    
+    @classmethod
+    def zipLists(cls, list1, list2):
+        zipped_list = LinkedList()
+        current1 = list1.head
+        current2 = list2.head
+        current3 = zipped_list.head
+        length1 = 0
+        length2 = 0
+        counter = 0
+        while current1 :
+            length1 += 1
+            current1 = current1.next
+        while current2 :
+            length2 += 1
+            current2 = current2.next
+        current1 = list1.head
+        current2 = list2.head
+        current3 = current1
+        current3.next = current2
+        current3 = current3.next
+        # zipped_list.head = current1.head
+        while counter <= (length1 + length2) - 1:
+            current3.next = current1.next
+            current3 = current3.next
+            current3.next = current2.next
+            current1 = current1.next
+            current2 = current2.next
+            counter += 1
+        return zipped_list
+
+
+
 
 
 
@@ -136,13 +170,19 @@ class LinkedList:
 if __name__ == "__main__":
     f_node = Node(1)
     f_linked_list = LinkedList()
-    # f_linked_list.insert(2)
-    # f_linked_list.insert(1)
-    # f_linked_list.append(5)
+    s_linked_list = LinkedList()
+    f_linked_list.insert(2)
+    f_linked_list.insert(1)
+    f_linked_list.append(5)
+    s_linked_list.insert(7)
+    s_linked_list.insert(8)
+    s_linked_list.append(9)
     # f_linked_list.insert_before(2, 7)
     # f_linked_list.insert_after(1, 8)
     # f_linked_list.delete(7)
     print(f_linked_list.to_string())
-    print(f_linked_list.kth_from_end(0))
+    print(s_linked_list.to_string())
+    # print(f_linked_list.kth_from_end(0))
+    print(LinkedList.zipLists(f_linked_list,s_linked_list).to_string())
     # print(f_linked_list.node_at_the_middle())
 
