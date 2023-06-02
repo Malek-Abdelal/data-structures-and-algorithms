@@ -113,6 +113,7 @@ class LinkedList:
         except ValueError:
             return('Negative values are not allowed !')
 
+
     def node_at_the_middle(self):
         current = self.head
         length = 0
@@ -130,35 +131,42 @@ class LinkedList:
             current = current.next
         return ("Your linked list is empty !")
     
-    @classmethod
-    def zipLists(cls, list1, list2):
-        zipped_list = LinkedList()
+        
+    @staticmethod
+    def zip_lists(list1, list2):     #All about pass by reference !!
         current1 = list1.head
         current2 = list2.head
-        current3 = zipped_list.head
-        length1 = 0
-        length2 = 0
-        counter = 0
-        while current1 :
-            length1 += 1
-            current1 = current1.next
-        while current2 :
-            length2 += 1
-            current2 = current2.next
-        current1 = list1.head
-        current2 = list2.head
-        current3 = current1
-        current3.next = current2
-        current3 = current3.next
-        # zipped_list.head = current1.head
-        while counter <= (length1 + length2) - 1:
-            current3.next = current1.next
-            current3 = current3.next
-            current3.next = current2.next
-            current1 = current1.next
-            current2 = current2.next
-            counter += 1
-        return zipped_list
+        if current1 is None:
+            return list2
+        if current2 is None:
+            return list1
+        while current1 and current2:
+            next1 = current1.next
+            next2 = current2.next
+            current1.next = current2
+            current2.next = next1 or next2
+            current1 = next1
+            current2 = next2
+        return list1.to_string()
+       
+
+    def check_palindrome(self, list):
+        current = list.head
+        values = []
+        result = True
+        while current :
+            values.append(current.value)
+            current = current.next
+        x, y = 0,-1
+        for i in range(len(values)//2):
+            if values[x] == values[y]:
+                result = True
+            else : 
+                result = False
+                return result
+            x+=1
+            y-=1
+        return result
 
 
 
@@ -169,20 +177,24 @@ class LinkedList:
 
 if __name__ == "__main__":
     f_node = Node(1)
-    f_linked_list = LinkedList()
-    s_linked_list = LinkedList()
-    f_linked_list.insert(2)
-    f_linked_list.insert(1)
+    f_linked_list = LinkedList(f_node)
+    f_linked_list.append(3)
     f_linked_list.append(5)
-    s_linked_list.insert(7)
-    s_linked_list.insert(8)
-    s_linked_list.append(9)
+    # f_linked_list.append(5)
+    # f_linked_list.append(3)
+    # f_linked_list.append(2)
+    s_linked_list = LinkedList()
+    s_linked_list.append(2)
+    s_linked_list.append(4)
+    s_linked_list.append(6)
     # f_linked_list.insert_before(2, 7)
     # f_linked_list.insert_after(1, 8)
     # f_linked_list.delete(7)
-    print(f_linked_list.to_string())
-    print(s_linked_list.to_string())
+    # print(f_linked_list.check_palindrome(f_linked_list))
+    # print(f_linked_list.to_string())
+    # print(s_linked_list.to_string())
+    # print(s_linked_list.to_string())
     # print(f_linked_list.kth_from_end(0))
-    print(LinkedList.zipLists(f_linked_list,s_linked_list).to_string())
+    print(LinkedList.zip_lists(f_linked_list,s_linked_list))
     # print(f_linked_list.node_at_the_middle())
 

@@ -94,6 +94,31 @@ def test_kthFromEnd_middle_node(linked_list_instance_with_3_nodes_123):
     linked_list_instance_with_3_nodes_123.append(5)
     assert linked_list_instance_with_3_nodes_123.kth_from_end(2) == 3
 
+def test_zip_lists(linked_list_instance_with_3_nodes_123):
+    list2 = LinkedList()
+    list2.append(1)
+    list2.append(2)
+    list2.append(3)
+    actual = LinkedList.zip_lists(linked_list_instance_with_3_nodes_123, list2)
+    expected = "{ 1 } -> { 1 } -> { 2 } -> { 2 } -> { 3 } -> { 3 } -> NONE"
+    assert actual == expected
+
+def test_zip_lists_one_longer(linked_list_instance_with_3_nodes_123):
+    list2 = LinkedList()
+    list2.append(6)
+    list2.append(7)
+    actual = LinkedList.zip_lists(linked_list_instance_with_3_nodes_123, list2)
+    expected = "{ 1 } -> { 6 } -> { 2 } -> { 7 } -> { 3 } -> NONE"
+    assert actual == expected
+
+def test_zip_lists_two_longer(linked_list_instance_with_3_nodes_123):
+    list1 = LinkedList()
+    list1.append(1)
+    list1.append(3)
+    actual = LinkedList.zip_lists(list1, linked_list_instance_with_3_nodes_123)
+    expected = "{ 1 } -> { 1 } -> { 3 } -> { 2 } -> { 3 } -> NONE"
+    assert actual == expected
+
 
 
 
