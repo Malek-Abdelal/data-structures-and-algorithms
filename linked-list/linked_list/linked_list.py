@@ -113,6 +113,7 @@ class LinkedList:
         except ValueError:
             return('Negative values are not allowed !')
 
+
     def node_at_the_middle(self):
         current = self.head
         length = 0
@@ -130,6 +131,7 @@ class LinkedList:
             current = current.next
         return ("Your linked list is empty !")
     
+        
     @staticmethod
     def zip_lists(list1, list2):     #All about pass by reference !!
         current1 = list1.head
