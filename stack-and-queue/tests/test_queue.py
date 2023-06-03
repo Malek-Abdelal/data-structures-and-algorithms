@@ -33,7 +33,8 @@ def test_empty_queue_peek_or_pop_raise_Exeption():
 
 @pytest.fixture
 def queue_instance_with_3_nodes_123():
-    new_queue = Queue(Node(1))
+    new_queue = Queue()
+    new_queue.enqueue(1)
     new_queue.enqueue(2)
     new_queue.enqueue(3)
     return new_queue
