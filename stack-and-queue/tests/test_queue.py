@@ -26,7 +26,7 @@ def test_instantiate():
 
 def test_empty_queue_peek_or_pop_raise_Exeption():
     new_stack = Queue()
-    assert new_stack.pop() == "The queue is empty !"
+    assert new_stack.dequeue() == "The queue is empty !"
     assert new_stack.peek() == "The queue is empty !"
     
 
