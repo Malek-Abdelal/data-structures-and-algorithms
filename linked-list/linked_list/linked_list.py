@@ -192,9 +192,9 @@ if __name__ == "__main__":
     # f_linked_list.delete(7)
     # print(f_linked_list.check_palindrome(f_linked_list))
     # print(f_linked_list.to_string())
-    # print(s_linked_list.to_string())
+    print(s_linked_list.to_string())
     # print(s_linked_list.to_string())
     # print(f_linked_list.kth_from_end(0))
-    print(LinkedList.zip_lists(f_linked_list,s_linked_list))
+    # print(LinkedList.zip_lists(f_linked_list,s_linked_list))
     # print(f_linked_list.node_at_the_middle())
 
