@@ -37,36 +37,37 @@ class Stack:
     def is_empty(self):
         return self.top == None
     
-    def validate_brackets(string):
-        stack = []
-        opening_brackets = ['(', '[', '{']
-        closing_brackets = [')', ']', '}']
-        brackets_map = {
-            ')': '(',
-            ']': '[',
-            '}': '{'
-        }
+    # def validate_brackets(string):
+    #     stack = []
+    #     opening_brackets = ['(', '[', '{']
+    #     closing_brackets = [')', ']', '}']
+    #     brackets_map = {
+    #         ')': '(',
+    #         ']': '[',
+    #         '}': '{'
+    #     }
 
-        for char in string:
-            if char in opening_brackets:
-                stack.append(char)
-            elif char in closing_brackets:
-                if len(stack) == 0 or brackets_map[char] != stack.pop():
-                    return False
+    #     for char in string:
+    #         if char in opening_brackets:
+    #             stack.append(char)
+    #         elif char in closing_brackets:
+    #             if len(stack) == 0 or brackets_map[char] != stack.pop():
+    #                 return False
 
-        return len(stack) == 0
+    #     return len(stack) == 0
         
 
 class EmptyStackError(Exception):
     def __init__(self):
         super().__init__("The stack is empty !")
 
-stack1 = Stack()
-stack1.push(1)
-stack1.push(2)
-# stack1.pop()
-# print(stack1.peek())
-# print(stack1.is_empty())
-# print(stack1.top.next.value)
-print(stack1)
+if "__name__" == "__main__":
+    stack1 = Stack()
+    stack1.push(1)
+    stack1.push(2)
+    # stack1.pop()
+    # print(stack1.peek())
+    # print(stack1.is_empty())
+    # print(stack1.top.next.value)
+    print(stack1)
 
