@@ -4,7 +4,7 @@ Implementing a Queue using two Stacks
 
 ## Whiteboard Process :
 
-![linked-list](./image.png)
+![Stack and Queue pseudo](./ch11.png)
 
 ## How to run the code :
 
