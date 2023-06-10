@@ -12,7 +12,7 @@
 | 6  | [Queue and Stack](./stack-and-queue/README.md)|
 | 7  | [Stack and Queue pseudo](./stack-and-queue/Stack-and-Queue-pseudo/README.md)|
 | 8  | [Stack Queue Animal Shelter](./stack-and-queue/Stack-and-Queue-pseudo/README.md)|
-| 9  | [Stack Queue Brackets](./stack-and-queue/Stack-and-Queue-pseudo/README.md)|
+| 9  | [Stack Queue Brackets](./stack-and-queue/stack_queue_animal_shelter/README.md)|
 
 
 
