@@ -1,36 +1,30 @@
 import pytest
-from stack_queue_animal_shelter import AnimalShelter
+from stack_queue_animal_shelter.animal_shelter import AnimalShelter, Animal
 
-def test_enqueue(capsys):
-    animal_shel = AnimalShelter()
-    animal_shel.enqueue("dog", "Mossberg")
-    animal_shel.enqueue("cat", "Mirabel")
-    animal_shel.print()
-    captured = capsys.readouterr()
-    output = captured.out.strip()
+def test_enqueue(queue_with_3_elements_cat_dog_cat):
+    actual = queue_with_3_elements_cat_dog_cat.back.name
+    expected = "locyy"
+    assert actual == expected
 
-    assert output == "Animal Type: dog, Animal Name: Mossberg\nAnimal Type: cat, Animal Name: Mirabel"
+def test_dequeue(queue_with_3_elements_cat_dog_cat):
+    actual = queue_with_3_elements_cat_dog_cat.dequeue("dog")
+    expected = "joy"
+    assert actual == expected
 
-
-def test_dequeue(capsys):
-    animal_shel1 = AnimalShelter()
-    animal_shel1.enqueue("dog", "Mossberg")
-    animal_shel1.enqueue("cat", "Mirabel")
-    animal_shel1.enqueue("dog", "Max")
-    animal_shel1.dequeue("cat")
-
-    animal_shel1.print()
-    captured = capsys.readouterr()
-    output = captured.out.strip()
+def test_cat_or_dog_is_not_preferred(queue_with_3_elements_cat_dog_cat):
+    actual = queue_with_3_elements_cat_dog_cat.dequeue("lion")
+    expected = "locy"
+    assert actual == expected
 
 
-    assert output == "Mirabel\nAnimal Type: dog, Animal Name: Mossberg\nAnimal Type: dog, Animal Name: Max"
-
-def test_invalid_pref():
-    animal_shel1 = AnimalShelter()
-    animal_shel1.enqueue("dog", "Buddy")
-    animal_shel1.enqueue("cat", "Whiskers")
-
-    invalid_pref = animal_shel1.dequeue("lion")
-
-    assert invalid_pref is None
+@pytest.fixture
+def queue_with_3_elements_cat_dog_cat():
+    shelter = AnimalShelter()
+    animal1 = Animal("cat", "locy")
+    animal2 = Animal("dog", "joy") 
+    animal3 = Animal("cat", "locyy")
+    shelter.enqueue(animal1)
+    shelter.enqueue(animal2)
+    shelter.enqueue(animal3)
+    return shelter
+    

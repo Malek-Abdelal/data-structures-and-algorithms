@@ -29,18 +29,16 @@ class AnimalShelter:
     def dequeue(self, pref):
         if not self.front:
             raise Exception("The queue is empty !")
-        if pref != "cat" and pref != "dog":
-            return None
         temp = self.front
-        if self.front.kind == pref: 
+        if (self.front.kind == pref) or (pref != "cat" and pref != "dog"): 
             self.front = temp.next
             temp.next = None
-            return temp.kind
+            return temp.name
         
         else:
             counter = 0
             found = False
-            dequeued_value = None                         # ???
+            dequeued_value = None                     
             while temp:
                 counter += 1
                 temp = temp.next
@@ -48,7 +46,7 @@ class AnimalShelter:
 
             for _ in range(counter - 1):
                 if self.front.kind == pref and not found:
-                    dequeued_value = self.front.name            # ???
+                    dequeued_value = self.front.name           
                     self.front = temp.next
                     temp.next = None
                     temp = self.front
@@ -59,6 +57,7 @@ class AnimalShelter:
                 self.enqueue(temp)
                 temp = self.front
             counter += 1
+            return dequeued_value
 
 
 
@@ -75,6 +74,6 @@ shelter.enqueue(animal3)
 shelter.enqueue(animal4)
 shelter.enqueue(animal5)
 shelter.enqueue(animal6)
-print(shelter)           # Output =>  None <- joyyy <- locyyy <- joyy <- locyy <- joy <- locy
-shelter.dequeue("dog")
-print(shelter)           # Output =>  None <- joyyy <- locyyy <- joyy <- locyy <- locy
+print(shelter)                 # Output =>  None <- joyyy <- locyyy <- joyy <- locyy <- joy <- locy
+print(shelter.dequeue("hah"))  # Output => joy
+print(shelter)                 # Output =>  None <- joyyy <- locyyy <- joyy <- locyy <- locy
