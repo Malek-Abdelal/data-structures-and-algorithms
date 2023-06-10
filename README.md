@@ -12,4 +12,3 @@
 | 6  | [Queue and Stack](./stack-and-queue/README.md)|
 | 7  | [Stack and Queue pseudo](./stack-and-queue/Stack-and-Queue-pseudo/README.md)|
 
-
