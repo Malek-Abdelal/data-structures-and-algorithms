@@ -2,10 +2,19 @@ from stack.stack import Stack
 
 class PseudoQueue:
     def __init__(self):
+        """
+        Initializes a new instance of the PseudoQueue class.
+        It creates two empty stacks to simulate a queue.
+        """
         self.stack1 = Stack()
         self.stack2 = Stack()
+        self.front = self.stack1.top
 
     def __str__(self):
+        """
+        Returns a string representation of the PseudoQueue.
+        It traverses stack1 and returns the elements in a string format.
+        """
         current = self.stack1.top
         stack = ""
         while current:
@@ -14,9 +23,24 @@ class PseudoQueue:
         return stack + "None"
 
     def enqueue(self, value):
+        """
+        Adds a value to the rear of the PseudoQueue (simulated queue).
+
+        Args:
+            value: The value to be added to the PseudoQueue.
+        """
         self.stack1.push(value)
 
     def dequeue(self):
+        """
+        Removes and returns the value at the front of the PseudoQueue (simulated queue).
+
+        Returns:
+            The value at the front of the PseudoQueue.
+
+        Raises:
+            Exception: If the PseudoQueue is empty.
+        """
         if not self.stack1.top:
             raise Exception("The stack is empty !")
         
