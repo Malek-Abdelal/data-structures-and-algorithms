@@ -48,56 +48,6 @@ class EmptyQueueError(Exception):
         super().__init__("The queue is empty !")
 
 
-
-# def DuckDuckGoose(list, k):
-#     queue = Queue()
-#     # queue2 = Queue()
-#     for ele in list:
-#         queue.enqueue(ele)
-    
-
-#     for i in range(4):
-#         current = queue.front
-#         counter = 0     
-#         while current:
-#             counter += 1
-#             if counter == k:
-#                 queue.dequeue()
-#             queue.enqueue(queue.dequeue())
-#             if current.value == queue.front.value and counter != 0 :
-#                 break
-#         print(queue)
-#         # current = current.next
-        
-
-
-    # current = queue.front
-    # temp = None
-    # for i in range(k-1):
-    #     queue2.enqueue(queue.dequeue())
-    #     # current = current.next or queue.front
-    # queue.dequeue()
-    # while current:
-    #     queue2.enqueue(queue.dequeue())
-    #     current = current.next
-    # queue2.enqueue(queue.dequeue())
-
-
-    # print("original", queue)
-
-# list1 = ["a","b","c","d","e"]
-# k = 3
-# DuckDuckGoose(list1, k)
-
-
-    # while current.next:
-
-
-
-    
-
-
-
 queue1 = Queue()
 # queue1.enqueue(1)
 # queue1.enqueue(2)
