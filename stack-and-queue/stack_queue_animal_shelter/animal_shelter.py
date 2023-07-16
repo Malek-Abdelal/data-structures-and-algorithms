@@ -1,5 +1,13 @@
 class Animal:
     def __init__(self, kind, name, next = None):
+        """
+            Initializes an instance of the Animal class.
+
+            Args:
+                kind (str): The type or kind of the animal.
+                name (str): The name of the animal.
+                next (Animal, optional): The reference to the next animal in the queue. Defaults to None.
+        """
         self.kind = kind
         self.name = name
         self.next = next
@@ -7,10 +15,23 @@ class Animal:
 
 class AnimalShelter:
     def __init__(self, back = None, front = None):
+        """
+        Initializes an instance of the AnimalShelter class.
+
+        Args:
+            back (Animal, optional): The reference to the back of the queue. Defaults to None.
+            front (Animal, optional): The reference to the front of the queue. Defaults to None.
+        """
         self.back = back
         self.front = front
         
     def __str__(self):
+        """
+        Returns a string representation of the animal queue.
+
+        Returns:
+            str: A string representation of the animal queue.
+        """
         current = self.front
         queue = ""
         while current:
@@ -19,6 +40,12 @@ class AnimalShelter:
         return "None" + queue
 
     def enqueue(self, animal):
+        """
+        Enqueues an animal into the shelter queue.
+
+        Args:
+            animal (Animal): The animal object to be enqueued.
+        """
         if not self.back :
             self.back = animal
             self.front = animal
@@ -27,6 +54,18 @@ class AnimalShelter:
             self.back = animal
 
     def dequeue(self, pref):
+        """
+        Dequeues an animal from the shelter queue based on the preference.
+
+        Args:
+            pref (str): The preference for the type of animal to dequeue ("cat", "dog", or any other value).
+
+        Returns:
+            str: The name of the dequeued animal.
+
+        Raises:
+            Exception: If the queue is empty.
+        """
         if not self.front:
             raise Exception("The queue is empty !")
         temp = self.front
@@ -74,6 +113,6 @@ shelter.enqueue(animal3)
 shelter.enqueue(animal4)
 shelter.enqueue(animal5)
 shelter.enqueue(animal6)
-print(shelter)                 # Output =>  None <- joyyy <- locyyy <- joyy <- locyy <- joy <- locy
-print(shelter.dequeue("hah"))  # Output => joy
-print(shelter)                 # Output =>  None <- joyyy <- locyyy <- joyy <- locyy <- locy
+print(shelter)                  # Output =>  None <- joyyy <- locyyy <- joyy <- locyy <- joy <- locy
+print(shelter.dequeue("lion"))  # Output => joy
+print(shelter)                  # Output =>  None <- joyyy <- locyyy <- joyy <- locyy <- locy
