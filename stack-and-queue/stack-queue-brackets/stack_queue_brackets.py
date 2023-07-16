@@ -1,48 +1,31 @@
 from stack.stack import Stack
 
-bra = "[]{hi(})"
-# def validate_brackets(brackets_str):
+# brackets = "}[]{hi(})"
+brackets = "([tow]{})"
 
+def validate_brackets(brackets_str):
+    """
+    Checks if the brackets in a string are balanced and properly nested.
 
-def validate_brackets(input):
-  brackets = {"{" : "}",
-              "[":"]",
-              "(":")"}
-  stack = Stack()
+    Args:
+        brackets_str (str): The string containing brackets to validate.
 
-  for char in input : 
-    if char in brackets.keys() :
-      stack.push(char)
-    elif char in brackets.values():
-      try :
-        if brackets[str(stack.peek())] != char :
-          return False
-        stack.pop()
-      except:
-        # raisng excption for empty stack or input 
-        return "something went wrong !"
-  return True if stack.is_empty()   else False   
+    Returns:
+        bool: True if the brackets are balanced and properly nested, False otherwise.
+    """
+    brackets = {"(": ")", "{": "}", "[": "]"}
+    stack = Stack()
+
+    for char in brackets_str:
+        if char in brackets.keys():
+            stack.push(char)
+        elif char in brackets.values():
+            if not stack or char != brackets[stack.pop()]:
+                return False
+
+    if stack.is_empty():
+      return True 
+    else: return False
         
 
-
-    # stack = Stack()
-    # brackets = ["{", "}", "[", "]", "(", ")"]
-    # counter = 0
-    # for ele in brackets_str:
-    #     if ele in brackets:
-    #         stack.push(ele)
-    #         counter += 1
-    # if counter % 2 != 0:
-    #     return False
-    # current = stack.top
-    # counter = 0
-    # while current:
-    #     if counter % 2 == 0:
-    #         if brackets.index(current.value) - 1 != brackets.index(current.next.value) :
-    #             return False
-    #     counter += 1
-    #     current = current.next
-    # # print(not stack)
-    # return True
-
-print(validate_brackets(bra))
+print(validate_brackets(brackets))
