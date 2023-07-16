@@ -1,4 +1,6 @@
-### Insertion Sort is a simple sorting algorithm that builds the final sorted array one element at a time. It is efficient for small data sets or nearly sorted arrays. The algorithm works as follows:
+## Insertion Sort:
+
+Insertion Sort is a simple sorting algorithm that builds the final sorted array one element at a time. It is efficient for small data sets or nearly sorted arrays. The algorithm works as follows:
 
 1. The `insert` function takes a sorted array (`sorted_array`) and a value to be inserted (`value`).
 2. It initializes `i` to 0 and iterates while `i` is less than the length of `sorted_array` and `value` is greater than the element at index `i` in `sorted_array`.
