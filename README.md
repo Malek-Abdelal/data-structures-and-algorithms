@@ -15,7 +15,7 @@
 | 8  | [Stack Queue Animal Shelter](./stack-and-queue/stack_queue_animal_shelter/README.md)|
 | 9  | [Stack Queue Brackets](./stack-and-queue/stack_queue_animal_shelter/README.md)|
 | 10 | [Selection Sort](./sorting/insertion/README.md)|
-| 10 | [Merge Sort](./sorting/merge/README.md)|
+| 11 | [Merge Sort](./sorting/merge/README.md)|
 
 
 
