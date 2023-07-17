@@ -16,6 +16,7 @@
 | 10 | [Trees](./trees/README.md)|
 | 11 | [Selection Sort](./sorting/insertion/README.md)|
 | 12 | [Merge Sort](./sorting/merge/README.md)|
+| 12 | [Sort Comparisons](./sorting/sorting_comparisons/README.md)|
 
 
 
