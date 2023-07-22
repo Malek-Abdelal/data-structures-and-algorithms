@@ -2,7 +2,7 @@
 
 Implementing Hash tables with it's methods **(get, set, __hash, has, keys)**.
 
-**The time and space complexity for each method:**
+## The time and space complexity for each method:
 
 **1. __hash(self, key):**
 
