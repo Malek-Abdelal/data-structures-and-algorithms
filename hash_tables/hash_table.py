@@ -38,12 +38,14 @@ class HashTable:
     self.keys_list = []
     
   def __hash(self,key):
-    '''
-    A method to return the hash code of the given key
-    arg : key
-    output: hash code of the key(index)
-    '''
-    return sum([ord(str(char)) for char in key]) * 283 % self.__size
+      '''
+        A method to return the hash code of the given key
+        arg : key
+        output: hash code of the key(index)
+        '''
+      if isinstance(key, int):  # Convert integer keys to strings
+          key = str(key)
+      return sum([ord(char) for char in key]) * 283 % self.__size
     
   def set(self,key,value):
     '''

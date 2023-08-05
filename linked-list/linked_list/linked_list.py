@@ -169,17 +169,26 @@ class LinkedList:
         return result
 
 
+    def reverse_linked_list(self):
+        curr_node, prev, next = self.head, None, None
+        while curr_node:
+            # Making changes to the node
+            next = curr_node.next
+            curr_node.next = prev
 
-
-
-
+            # Traversing through the Linked List
+            prev = curr_node
+            curr_node = next
+            
+        self.head = prev
+        return self.to_string()
 
 
 if __name__ == "__main__":
-    f_node = Node(1)
-    f_linked_list = LinkedList(f_node)
-    f_linked_list.append(3)
-    f_linked_list.append(5)
+    # f_node = Node(1)
+    # f_linked_list = LinkedList(f_node)
+    # f_linked_list.append(3)
+    # f_linked_list.append(5)
     # f_linked_list.append(5)
     # f_linked_list.append(3)
     # f_linked_list.append(2)
@@ -187,13 +196,15 @@ if __name__ == "__main__":
     s_linked_list.append(2)
     s_linked_list.append(4)
     s_linked_list.append(6)
+    s_linked_list.append(8)
+    s_linked_list.append(10)
     # f_linked_list.insert_before(2, 7)
     # f_linked_list.insert_after(1, 8)
     # f_linked_list.delete(7)
     # print(f_linked_list.check_palindrome(f_linked_list))
     # print(f_linked_list.to_string())
     print(s_linked_list.to_string())
-    # print(s_linked_list.to_string())
+    print(s_linked_list.reverse_linked_list())
     # print(f_linked_list.kth_from_end(0))
     # print(LinkedList.zip_lists(f_linked_list,s_linked_list))
     # print(f_linked_list.node_at_the_middle())
