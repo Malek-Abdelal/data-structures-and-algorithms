@@ -17,6 +17,9 @@
 | 11 | [Insertion Sort](./sorting/insertion/README.md)|
 | 12 | [Merge Sort](./sorting/merge/README.md)|
 | 12 | [Sort Comparisons](./sorting/sorting_comparisons/README.md)|
+| 13 | [Hash Tables](./hash-tables/README.md)|
+| 13 | [Tree Intersection](./tree_intersection/README.md)|
+| 13 | [Graph](./graph/README.md)|
 
 
 
