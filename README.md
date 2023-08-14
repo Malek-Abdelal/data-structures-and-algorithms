@@ -16,10 +16,11 @@
 | 10 | [Trees](./trees/README.md)|
 | 11 | [Insertion Sort](./sorting/insertion/README.md)|
 | 12 | [Merge Sort](./sorting/merge/README.md)|
-| 12 | [Sort Comparisons](./sorting/sorting_comparisons/README.md)|
-| 13 | [Hash Tables](./hash-tables/README.md)|
-| 13 | [Tree Intersection](./tree_intersection/README.md)|
-| 13 | [Graph](./graph/README.md)|
+| 13 | [Sort Comparisons](./sorting/sorting_comparisons/README.md)|
+| 14 | [Hash Tables](./hash-tables/README.md)|
+| 15 | [Tree Intersection](./tree_intersection/README.md)|
+| 16 | [Graph](./graph/README.md)|
+| 17 | [graph business trip](./graph/README.md)|
 
 
 
