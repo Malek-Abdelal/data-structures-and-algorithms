@@ -136,18 +136,18 @@ class LinkedList:
     def zip_lists(list1, list2):     #All about pass by reference !!
         current1 = list1.head
         current2 = list2.head
-        if current1 is None:
-            return list2
         if current2 is None:
             return list1
+        if current1 is None:
+            return list2
         while current1 and current2:
             next1 = current1.next
             next2 = current2.next
-            current1.next = current2
-            current2.next = next1 or next2
+            current2.next = current1
+            current1.next = next2 or next1
             current1 = next1
             current2 = next2
-        return list1.to_string()
+        return list2.to_string()
        
 
     def check_palindrome(self, list):
@@ -185,27 +185,28 @@ class LinkedList:
 
 
 if __name__ == "__main__":
-    # f_node = Node(1)
-    # f_linked_list = LinkedList(f_node)
-    # f_linked_list.append(3)
-    # f_linked_list.append(5)
+    f_node = Node(1)
+    f_linked_list = LinkedList(f_node)
+    f_linked_list.append(3)
+    f_linked_list.append(5)
     # f_linked_list.append(5)
     # f_linked_list.append(3)
     # f_linked_list.append(2)
-    s_linked_list = LinkedList()
-    s_linked_list.append(2)
-    s_linked_list.append(4)
-    s_linked_list.append(6)
-    s_linked_list.append(8)
-    s_linked_list.append(10)
-    # f_linked_list.insert_before(2, 7)
+    # s_linked_list = LinkedList()
+    # s_linked_list.append(2)
+    # s_linked_list.append(4)
+    # s_linked_list.append(6)
+    # s_linked_list.append(8)
+    # s_linked_list.append(10)
+    f_linked_list.insert_before(3, 7)
     # f_linked_list.insert_after(1, 8)
     # f_linked_list.delete(7)
     # print(f_linked_list.check_palindrome(f_linked_list))
-    # print(f_linked_list.to_string())
-    print(s_linked_list.to_string())
-    print(s_linked_list.reverse_linked_list())
+    print(f_linked_list.to_string())
+    # print(s_linked_list.to_string())
+    # print(s_linked_list.reverse_linked_list())
     # print(f_linked_list.kth_from_end(0))
     # print(LinkedList.zip_lists(f_linked_list,s_linked_list))
+    # print(s_linked_list.to_string())
     # print(f_linked_list.node_at_the_middle())
 
