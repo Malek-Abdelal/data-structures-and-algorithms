@@ -20,7 +20,7 @@
 | 14 | [Hash Tables](./hash-tables/README.md)|
 | 15 | [Tree Intersection](./tree_intersection/README.md)|
 | 16 | [Graph](./graph/README.md)|
-| 17 | [graph business trip](./graph/README.md)|
+| 17 | [graph business trip](./graph_business_trip/README.md)|
 
 
 
