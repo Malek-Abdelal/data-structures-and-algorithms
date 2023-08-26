@@ -105,18 +105,7 @@ class HashTable:
         return self.keys.copy()
 
 def left_join(hashmap1, hashmap2):
-    """
-    Perform a left join operation on two hashmaps.
-
-    Args:
-        hashmap1 (HashTable): The first hashmap.
-        hashmap2 (HashTable): The second hashmap.
-
-    Returns:
-        list: A list of lists with the left join results. Each sublist contains [key, value1, value2],
-              where value1 is the corresponding value from hashmap1, and value2 is the corresponding
-              value from hashmap2 (or None if the key is not present in hashmap2).
-    """
+    
     record = []
     for key in hashmap1.all_keys():
         if hashmap2.has(key):
