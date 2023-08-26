@@ -18,11 +18,10 @@
 | 12 | [Merge Sort](./sorting/merge/README.md)|
 | 13 | [Sort Comparisons](./sorting/sorting_comparisons/README.md)|
 | 14 | [Hash Tables](./hash-tables/README.md)|
-| 15 | [First Repeated Word](./hashmap_repeated_word/README.md)|
-| 16 | [Tree Intersection](./tree_intersection/README.md)|
-| 17 | [Graph](./graph/README.md)|
-| 18 | [graph business trip](./graph/README.md)|
-
+| 15 | [Tree Intersection](./tree_intersection/README.md)|
+| 16 | [Graph](./graph/README.md)|
+| 17 | [graph business trip](./graph/README.md)|
+| 18 | [First Repeated Word](./hashmap_repeated_word/README.md)|
 
 
 
